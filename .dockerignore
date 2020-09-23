@@ -1,0 +1,12 @@
+__pycache__
+airflow/data
+build
+dist
+docs
+nugflow.egg-info
+terraform
+.env
+bak
+
+*.db
+terraform

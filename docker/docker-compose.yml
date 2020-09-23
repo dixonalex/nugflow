@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nugflow-airflow:
+    build:
+      context: ../warehouse
+      dockerfile: Dockerfile
+    environment:
+      - NUGFLOW_DATA_PATH=${NUGFLOW_DATA_PATH}/pipeline
+      - VAULT_DB_NAME=${AIRFLOW_HOME}/data/db/vault.db
+    container_name: nugflow-app
+    command: airflow scheduler
+    volumes:
+      - ~/.aws/credentials:/root/.aws/credentials
